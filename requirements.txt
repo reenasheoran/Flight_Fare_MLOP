@@ -4,3 +4,4 @@ sklearn
 flask
 flake8
 pandas
+catboost

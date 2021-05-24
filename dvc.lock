@@ -46,8 +46,8 @@ stages:
       md5: a3be2c65c642a6aed00fbc4e2930bc2f
       size: 717141
     - path: src/split_data.py
-      md5: 629f30f5a4f8c838900e38e0f8bebf46
-      size: 986
+      md5: 51a218691fbb57e2c3a806f81b05fe07
+      size: 949
     outs:
     - path: data/processed/test.csv
       md5: a4321a35f97e727e462181540b35057b

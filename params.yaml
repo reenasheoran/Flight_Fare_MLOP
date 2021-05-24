@@ -18,10 +18,10 @@ split_data:
   test_size: 0.2
 
 estimators:
-  RandomForest:
+  CatBoost:
     params:
       iterations: 1000
-      learning_rate: 0.5178
+      learning_rate: 0.5718
       depth: 8
 
 model_dir: saved_models

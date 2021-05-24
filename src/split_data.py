@@ -7,7 +7,6 @@ from sklearn.model_selection import train_test_split
 def split_data(config_path):
     config = read_params(config_path)
     data_path = config["filter_data"]["filter_data_csv"]
-    target = config['base']["target"]
     df = pd.read_csv(data_path,sep=',',encoding='utf-8')
     split_ratio = config["split_data"]["test_size"]
     random_state = config["base"]["random_state"]
@@ -16,6 +15,7 @@ def split_data(config_path):
     test_data_path=config["split_data"]["test_data"]
     train.to_csv(train_data_path,sep=',',encoding='utf-8')
     test.to_csv(test_data_path,sep=',',encoding='utf-8')
+
 
 
 if __name__=="__main__":
