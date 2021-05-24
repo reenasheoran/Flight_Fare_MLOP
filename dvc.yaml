@@ -1,1 +1,16 @@
 stages:
+  load_data:
+    cmd: python src/get_data.py --config=params.yaml
+    deps:
+    - src/get_data.py
+    - Original_data/flight_data.xlsx
+    outs:
+    - data/raw/flight_data.csv
+  
+  final_data:
+    cmd: python src/feature_engineering.py --config=params.yaml
+    deps:
+    - src/feature_engineering.py
+    - data/raw/flight_data.csv
+    outs:
+    - data/filtered/final_data.csv

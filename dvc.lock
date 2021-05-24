@@ -1,0 +1,28 @@
+schema: '2.0'
+stages:
+  load_data:
+    cmd: python src/get_data.py --config=params.yaml
+    deps:
+    - path: Original_data/flight_data.xlsx
+      md5: 756221384eb61ff168c5db6b81438501
+      size: 530389
+    - path: src/get_data.py
+      md5: 4609865624590a92fef65f45972ab05c
+      size: 692
+    outs:
+    - path: data/raw/flight_data.csv
+      md5: ea995518999e47766c19cedb8b1510bf
+      size: 1107157
+  final_data:
+    cmd: python src/feature_engineering.py --config=params.yaml
+    deps:
+    - path: data/raw/flight_data.csv
+      md5: ea995518999e47766c19cedb8b1510bf
+      size: 1107157
+    - path: src/feature_engineering.py
+      md5: 51f3a854b4c296bc51d380182b1b2104
+      size: 2322
+    outs:
+    - path: data/filtered/final_data.csv
+      md5: a3be2c65c642a6aed00fbc4e2930bc2f
+      size: 717141
