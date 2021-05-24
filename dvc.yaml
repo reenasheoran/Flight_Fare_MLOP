@@ -7,10 +7,19 @@ stages:
     outs:
     - data/raw/flight_data.csv
   
-  final_data:
+  filter_data:
     cmd: python src/feature_engineering.py --config=params.yaml
     deps:
     - src/feature_engineering.py
     - data/raw/flight_data.csv
     outs:
     - data/filtered/final_data.csv
+
+  split_data:
+    cmd: python src/split_data.py --config=params.yaml
+    deps:
+    - data/filtered/final_data.csv
+    - src/split_data.py
+    outs:
+    - data/processed/train.csv
+    - data/processed/test.csv

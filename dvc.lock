@@ -26,3 +26,32 @@ stages:
     - path: data/filtered/final_data.csv
       md5: a3be2c65c642a6aed00fbc4e2930bc2f
       size: 717141
+  filter_data:
+    cmd: python src/feature_engineering.py --config=params.yaml
+    deps:
+    - path: data/raw/flight_data.csv
+      md5: ea995518999e47766c19cedb8b1510bf
+      size: 1107157
+    - path: src/feature_engineering.py
+      md5: 51f3a854b4c296bc51d380182b1b2104
+      size: 2322
+    outs:
+    - path: data/filtered/final_data.csv
+      md5: a3be2c65c642a6aed00fbc4e2930bc2f
+      size: 717141
+  split_data:
+    cmd: python src/split_data.py --config=params.yaml
+    deps:
+    - path: data/filtered/final_data.csv
+      md5: a3be2c65c642a6aed00fbc4e2930bc2f
+      size: 717141
+    - path: src/split_data.py
+      md5: 629f30f5a4f8c838900e38e0f8bebf46
+      size: 986
+    outs:
+    - path: data/processed/test.csv
+      md5: a4321a35f97e727e462181540b35057b
+      size: 154411
+    - path: data/processed/train.csv
+      md5: 51ff4a0a1497bfc90762d208f8b9ba08
+      size: 616137
