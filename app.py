@@ -32,6 +32,7 @@ def api_response(request):
 
 
 @app.route('/', methods=["GET","POST"])
+@cross_origin()
 def launch():
     if request.method == 'POST':
         try:
@@ -284,8 +285,8 @@ def launch():
                     destination_Hyderabad = 0
                     destination_Kolkata = 0
                     
-                    
-                prediction = predict([[
+                model = find_model()   
+                prediction = model.predict([[
                         Air_India,
                         GoAir,
                         IndiGo,
@@ -318,7 +319,7 @@ def launch():
                 ]])
                 response = np.round(prediction[0], 2)
                 return render_template('index.html', response = "Fare for this trip is Rs. {}".format(response))
-            return render_template("index.html")
+            
             # elif request.json:
             #     response = api_response(request)
             #     return jsonify(response)
