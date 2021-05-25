@@ -1,0 +1,178 @@
+{% extends 'base.html' %}
+
+{% block title %}
+FlightFare
+{% endblock title %}
+
+
+{% block custom_css %}
+<!-- Custom CSS -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+{% endblock custom_css %}
+
+
+{% block body %}
+<!-- nav bar -->
+
+<nav class="navbar navbar-expand-lg navbar-light shadow fixed-top" style="background-color: #e3f2fd;">
+    <a class="navbar-brand" href="/">Indian Flight Fare Predictor</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="https://github.com/reenasheoran/Flight_Fare_MLOP">source code</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div>
+    <!-- nav bar ends -->
+
+    
+	
+        <div style="color:white">
+                <h1><center><i>FLIGHT FARE PREDICTION</i></center></h1>
+    
+            <form action="\predict" method="post">
+    
+                 <center><h5 style="font-family:Arial;">DEPARTURE DATE AND TIME :&nbsp;&nbsp; <input type="datetime-local" name="Dep_Time" id="Dep_Time" required="required">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;STARTING CITY : &nbsp;&nbsp;<select name = "Source" id="Source" required="required">
+                        <option value="Delhi">Delhi</option>
+                        <option value="Kolkata">Kolkata</option>
+                        <option value="Mumbai">Mumbai</option>
+                        <option value="Chennai">Chennai</option>
+                    </select><br><br><br>
+                    ARRIVAL DATE AND TIME :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="datetime-local" name = "Arrival_Time" id = "Arival_Time" required="required">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    DESTINATION CITY :&nbsp;&nbsp; <select name = "Destination" id="Destination" required="required">
+                        <option value="Cochin">Cochin</option>
+                        <option value="Delhi">Delhi</option>
+                        <option value="New_Delhi">New Delhi</option>
+                        <option value="Hyderabad">Hyderabad</option>
+                        <option value="Kolkata">Kolkata</option>
+                    </select><br><br><br>
+                    NUMBER OF HALTING STOPS :&nbsp;&nbsp;  <select name = "stops" id="stops" required="required">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="0">No Stop</option>
+                    </select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    CHOICE OF AIRLINE :&nbsp;&nbsp; <select name = "airline" id="airline" required="required">
+                        <option value="Jet Airways">JET AIRWAYS</option>
+                        <option value="Air India">AIR INDIA</option>
+                        <option value="Multiple Carriers">MULTIPLE CARRIERS</option>
+                        <option value="SpiceJet">SPICEJET</option>
+                        <option value="Vistara">VISTARA</option>
+                        <option value="GoAir">GO AIR</option>
+                        <option value="Multiple carriers Premium economy">MULTIPLE CARRIERS PREMIUM ECONOMY</option>
+                        <option value="Jet Airways Business">JET AIRWAYS BUSINESS</option>
+                        <option value="Vistara Premium economy">VISTARA PREMIUM ECONOMY</option>
+                        <option value="Truejet">TRUEJET</option>
+                    </select></center></h3>
+                
+    
+                    <left><br><br><button id="sub" type="submit ">Calculate Fare</button></left>
+                
+    
+            </form>
+
+            <br>
+            <center><h3>{{ prediction_text }}</h3></center>
+    
+    
+            <br>
+            <br>
+    
+        </div>
+    
+        <style>
+            body {
+                padding: 0px;
+                font-family: Arial black, Charcoal, sans-serif;
+                background: url("https://www.popsci.com/app/uploads/2019/12/19/OPJG3PMR2NG27OGO3354GN54UU.jpg?width=1440") no-repeat center fixed; 
+                background-size: cover;
+            }
+    
+            #Source {
+                width: 240px;
+                height: 35px;
+                text-align: center;
+                border-radius: 10px;
+                font-size: 15px;
+            }
+            
+            #Source:hover {
+                background-color: #2593DF;
+            }
+    
+    
+            #Destination {
+                width: 240px;
+                height: 35px;
+                text-align: center;
+                border-radius: 10px;
+                font-size: 15px;
+            }
+            
+            #Destination:hover {
+                background-color: #2593DF;
+            }
+    
+    
+            #stops {
+                width: 80px;
+                height: 30px;
+                text-align: center;
+                border-radius: 10px;
+                font-size: 15px;
+            }
+            
+            #stops:hover {
+                background-color: #2593DF;
+            }
+    
+    
+            #airline {
+                width: 240px;
+                height: 35px;
+                text-align: center;
+                border-radius: 10px;
+                font-size: 15px;
+            }
+            
+            #airline:hover {
+                background-color: #2593DF;
+            }
+    
+    
+            #sub {
+                width: 250px;
+                height: 35px;
+                text-align: center;
+                border-radius: 14px;
+                font-size: 15px;
+                margin: auto;
+                display: block;
+    
+            }
+            
+            #sub:hover {
+                background-color: #7CE765;
+            }
+    
+        </style>
+    
+        {% endblock body %}
+
+        {% block custom_js %}
+        <!-- Custom JS -->
+        <script src="{{ url_for('static', filename='script/index.js') }}"></script>
+        {% endblock custom_js %}
