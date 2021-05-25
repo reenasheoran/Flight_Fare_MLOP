@@ -33,16 +33,27 @@ FlightFare
 </nav>
 <div>
     <!-- nav bar ends -->
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="container-fluid masthead">
+        
+        <br>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <form method="POST">
+                        <!-- Input block-->
+                        <div class="form-group">
+                            <label for="translation">
+                                <div style="color:white">
+                                    <h1><center><i>FLIGHT FARE PREDICTION</i></center></h1><br>
 
     
-	
-        <div style="color:white">
-                <h1><center><i>FLIGHT FARE PREDICTION</i></center></h1>
-    
-            <form action="\predict" method="post">
-    
-                 <center><h5 style="font-family:Arial;">DEPARTURE DATE AND TIME :&nbsp;&nbsp; <input type="datetime-local" name="Dep_Time" id="Dep_Time" required="required">
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;STARTING CITY : &nbsp;&nbsp;<select name = "Source" id="Source" required="required">
+                 <left><h5 style="font-family:Arial;">DEPARTURE DATE AND TIME :&nbsp;&nbsp; <input type="datetime-local" name="Dep_Time" id="Dep_Time" required="required">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;STARTING CITY : &nbsp;&nbsp;<select name = "source" id="source" required="required">
+                        <option value="">--select--</option>
                         <option value="Delhi">Delhi</option>
                         <option value="Kolkata">Kolkata</option>
                         <option value="Mumbai">Mumbai</option>
@@ -50,14 +61,15 @@ FlightFare
                     </select><br><br><br>
                     ARRIVAL DATE AND TIME :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="datetime-local" name = "Arrival_Time" id = "Arival_Time" required="required">
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    DESTINATION CITY :&nbsp;&nbsp; <select name = "Destination" id="Destination" required="required">
+                    DESTINATION CITY :&nbsp;&nbsp; <select name = "destination" id="destination" required="required">
+                        <option value="">--select--</option>
                         <option value="Cochin">Cochin</option>
                         <option value="Delhi">Delhi</option>
-                        <option value="New_Delhi">New Delhi</option>
                         <option value="Hyderabad">Hyderabad</option>
                         <option value="Kolkata">Kolkata</option>
                     </select><br><br><br>
                     NUMBER OF HALTING STOPS :&nbsp;&nbsp;  <select name = "stops" id="stops" required="required">
+                        <option value="">--select--</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -66,6 +78,7 @@ FlightFare
                     </select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     CHOICE OF AIRLINE :&nbsp;&nbsp; <select name = "airline" id="airline" required="required">
+                        <option value="">--select--</option>
                         <option value="Jet Airways">JET AIRWAYS</option>
                         <option value="Air India">AIR INDIA</option>
                         <option value="Multiple Carriers">MULTIPLE CARRIERS</option>
@@ -76,13 +89,19 @@ FlightFare
                         <option value="Jet Airways Business">JET AIRWAYS BUSINESS</option>
                         <option value="Vistara Premium economy">VISTARA PREMIUM ECONOMY</option>
                         <option value="Truejet">TRUEJET</option>
-                    </select></center></h3>
+                    </select></left></h3>
                 
-    
+                </div>
+
+                <!-- Select output language here. -->
+                <div class="form-group">
+                </div>
+
                     <left><br><br><button id="sub" type="submit ">Calculate Fare</button></left>
                 
     
             </form>
+        </div>
 
             <br>
             <center><h3>{{ prediction_text }}</h3></center>

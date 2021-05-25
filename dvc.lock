@@ -46,24 +46,24 @@ stages:
       md5: a3be2c65c642a6aed00fbc4e2930bc2f
       size: 717141
     - path: src/split_data.py
-      md5: 51a218691fbb57e2c3a806f81b05fe07
-      size: 949
+      md5: 6e1a431e335496bf0876d3558baaab15
+      size: 973
     outs:
     - path: data/processed/test.csv
-      md5: a4321a35f97e727e462181540b35057b
-      size: 154411
+      md5: 31791ea3b52e60f30ea7917d319cc5db
+      size: 143805
     - path: data/processed/train.csv
-      md5: 51ff4a0a1497bfc90762d208f8b9ba08
-      size: 616137
+      md5: a62f8ca7b4c71205f633fb1bb0f60d77
+      size: 573759
   model_train_evaluate:
     cmd: python src/model_train_evaluate.py --config=params.yaml
     deps:
     - path: data/processed/test.csv
-      md5: a4321a35f97e727e462181540b35057b
-      size: 154411
+      md5: 31791ea3b52e60f30ea7917d319cc5db
+      size: 143805
     - path: data/processed/train.csv
-      md5: 51ff4a0a1497bfc90762d208f8b9ba08
-      size: 616137
+      md5: a62f8ca7b4c71205f633fb1bb0f60d77
+      size: 573759
     - path: src/model_train_evaluate.py
       md5: 78fd94eb2c052be6fbceb90de4c67d0a
       size: 2713
@@ -77,8 +77,8 @@ stages:
       md5: fb39c82222f36a2a8ca7ee52d6efe549
       size: 75
     - path: report/scores.json
-      md5: 51c15a056628d06537056312861c2bb3
+      md5: f9785253119d3528b0372005e1bb9137
       size: 97
     - path: saved_models/model.joblib
-      md5: a7c6fc0777b91a9c05266985b7dfea21
-      size: 4170378
+      md5: 03e42ac12b7b0775cc038e8ee15fef7b
+      size: 4144647

@@ -13,8 +13,8 @@ def split_data(config_path):
     train,test=train_test_split(df,test_size=split_ratio,random_state=random_state)
     train_data_path=config["split_data"]["train_data"]
     test_data_path=config["split_data"]["test_data"]
-    train.to_csv(train_data_path,sep=',',encoding='utf-8')
-    test.to_csv(test_data_path,sep=',',encoding='utf-8')
+    train.to_csv(train_data_path,sep=',',encoding='utf-8',index=False)
+    test.to_csv(test_data_path,sep=',',encoding='utf-8',index=False)
 
 
 
