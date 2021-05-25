@@ -23,3 +23,21 @@ stages:
     outs:
     - data/processed/train.csv
     - data/processed/test.csv
+
+  model_train_evaluate:
+    cmd: python src/model_train_evaluate.py --config=params.yaml
+    deps:
+    - data/processed/train.csv
+    - data/processed/test.csv
+    - src/model_train_evaluate.py
+    params:
+    - estimators.CatBoost.params.iterations
+    - estimators.CatBoost.params.learning_rate
+    - estimators.CatBoost.params.depth
+    metrics:
+    - report/scores.json:
+        cache: false
+    - report/params.json:
+        cache: false
+    outs:
+    - saved_models/model.joblib

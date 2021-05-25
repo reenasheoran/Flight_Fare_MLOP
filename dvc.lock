@@ -55,3 +55,30 @@ stages:
     - path: data/processed/train.csv
       md5: 51ff4a0a1497bfc90762d208f8b9ba08
       size: 616137
+  model_train_evaluate:
+    cmd: python src/model_train_evaluate.py --config=params.yaml
+    deps:
+    - path: data/processed/test.csv
+      md5: a4321a35f97e727e462181540b35057b
+      size: 154411
+    - path: data/processed/train.csv
+      md5: 51ff4a0a1497bfc90762d208f8b9ba08
+      size: 616137
+    - path: src/model_train_evaluate.py
+      md5: 78fd94eb2c052be6fbceb90de4c67d0a
+      size: 2713
+    params:
+      params.yaml:
+        estimators.CatBoost.params.depth: 8
+        estimators.CatBoost.params.iterations: 1000
+        estimators.CatBoost.params.learning_rate: 0.5718
+    outs:
+    - path: report/params.json
+      md5: fb39c82222f36a2a8ca7ee52d6efe549
+      size: 75
+    - path: report/scores.json
+      md5: 51c15a056628d06537056312861c2bb3
+      size: 97
+    - path: saved_models/model.joblib
+      md5: a7c6fc0777b91a9c05266985b7dfea21
+      size: 4170378

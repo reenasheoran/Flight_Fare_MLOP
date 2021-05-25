@@ -51,34 +51,33 @@ def train_model(config_path):
     print("  MAE: %s" % MAE)
     print("  R2_score: %s" % R2_scores)
 
+    model_dir = config["model_dir"]
 
-    # scores_file = config["reports"]["scores"]
-    # params_file = config["reports"]["params"]
+    os.makedirs(model_dir, exist_ok=True)
+    model_path = os.path.join(model_dir, "model.joblib")
 
-    # with open(scores_file, "w") as f:
-    #     scores = {
-    #         "MSE": MSE
-    #         "RMSE": RMSE,
-    #         "MAE": MAE,
-    #         "R2_score": R2_score
-    #     }
-    #     json.dump(scores, f, indent=4)
+    joblib.dump(CBR, model_path)
 
-    # with open(params_file, "w") as f:
-    #     params = {
-    #         "alpha": alpha,
-    #         "l1_ratio": l1_ratio,
-    #     }
-    #     json.dump(params, f, indent=4)
+    scores_file = config["reports"]["scores"]
+    
+    with open(scores_file, "w") as f:
+        scores = {
+             "MSE": MSE,
+             "RMSE": RMSE,
+             "MAE": MAE,
+             "R2_score": R2_scores
+        }
+        json.dump(scores, f, indent=4)
+    
+    params_file = config["reports"]["params"]
 
-    # model_dir = config["model_dir"]
-
-    # os.makedirs(model_dir, exist_ok=True)
-    # model_path = os.path.join(model_dir, "model.joblib")
-
-    # joblib.dump(lr, model_path)
-
-
+    with open(params_file, "w") as f:
+        params = {
+            "iterations": itrns,
+            "learning_rate": lr,
+            "depth": depth
+        }
+        json.dump(params, f, indent=4)
 
 if __name__=="__main__":
     args = argparse.ArgumentParser()
