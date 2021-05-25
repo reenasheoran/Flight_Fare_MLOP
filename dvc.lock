@@ -69,16 +69,16 @@ stages:
       size: 2713
     params:
       params.yaml:
-        estimators.CatBoost.params.depth: 8
-        estimators.CatBoost.params.iterations: 1000
-        estimators.CatBoost.params.learning_rate: 0.5718
+        estimators.CatBoost.params.depth: 2
+        estimators.CatBoost.params.iterations: 500
+        estimators.CatBoost.params.learning_rate: 0.1718
     outs:
     - path: report/params.json
-      md5: fb39c82222f36a2a8ca7ee52d6efe549
-      size: 75
+      md5: bdaec57e96453eea1ab9e12f3ec3c983
+      size: 74
     - path: report/scores.json
-      md5: 51c15a056628d06537056312861c2bb3
+      md5: 9647da296fb54957a031fefef91ecdcf
       size: 97
     - path: saved_models/model.joblib
-      md5: a7c6fc0777b91a9c05266985b7dfea21
-      size: 4170378
+      md5: 7048ffb90b9791d3ad8fd50b0be2a88f
+      size: 52873
