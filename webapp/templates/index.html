@@ -14,7 +14,7 @@ FlightFare
 {% block body %}
 <!-- nav bar -->
 
-<nav class="navbar navbar-expand-lg navbar-light shadow fixed-top" style="background-color: #e3f2fd;">
+<nav class="navbar navbar-expand-lg navbar-light shadow fixed-top" style="background-color:dodgerblue;">
     <a class="navbar-brand" href="/">Indian Flight Fare Predictor</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -26,7 +26,7 @@ FlightFare
                 <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="https://github.com/reenasheoran/Flight_Fare_MLOP">source code</a>
+                <a class="nav-link" href="https://github.com/reenasheoran/Flight_Fare_MLOP">Source-Code</a>
             </li>
         </ul>
     </div>
@@ -51,24 +51,24 @@ FlightFare
                                     <h1><center><i>FLIGHT FARE PREDICTION</i></center></h1><br>
 
     
-                 <left><h5 style="font-family:Arial;">DEPARTURE DATE AND TIME :&nbsp;&nbsp; <input type="datetime-local" name="Dep_Time" id="Dep_Time" required="required">
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;STARTING CITY : &nbsp;&nbsp;<select name = "source" id="source" required="required">
+                 <left><h5 style="font-family:Arial;"><b>DEPARTURE DATE AND TIME :</b>&nbsp;&nbsp; <input type="datetime-local" name="Dep_Time" id="Dep_Time" required="required">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>STARTING CITY :</b> &nbsp;&nbsp;<select name = "source" id="source" required="required">
                         <option value="">--select--</option>
                         <option value="Delhi">Delhi</option>
                         <option value="Kolkata">Kolkata</option>
                         <option value="Mumbai">Mumbai</option>
                         <option value="Chennai">Chennai</option>
                     </select><br><br><br>
-                    ARRIVAL DATE AND TIME :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="datetime-local" name = "Arrival_Time" id = "Arival_Time" required="required">
+                    <b>ARRIVAL DATE AND TIME :</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="datetime-local" name = "Arrival_Time" id = "Arival_Time" required="required">
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    DESTINATION CITY :&nbsp;&nbsp; <select name = "destination" id="destination" required="required">
+                    <b>DESTINATION CITY :</b>&nbsp;&nbsp; <select name = "destination" id="destination" required="required">
                         <option value="">--select--</option>
                         <option value="Cochin">Cochin</option>
                         <option value="Delhi">Delhi</option>
                         <option value="Hyderabad">Hyderabad</option>
                         <option value="Kolkata">Kolkata</option>
                     </select><br><br><br>
-                    NUMBER OF HALTING STOPS :&nbsp;&nbsp;  <select name = "stops" id="stops" required="required">
+                    <b>NUMBER OF HALTING STOPS :</b>&nbsp;&nbsp;  <select name = "stops" id="stops" required="required">
                         <option value="">--select--</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -77,7 +77,7 @@ FlightFare
                         <option value="0">No Stop</option>
                     </select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    CHOICE OF AIRLINE :&nbsp;&nbsp; <select name = "airline" id="airline" required="required">
+                    <b>CHOICE OF AIRLINE :</b>&nbsp;&nbsp; <select name = "airline" id="airline" required="required">
                         <option value="">--select--</option>
                         <option value="Jet Airways">JET AIRWAYS</option>
                         <option value="Air India">AIR INDIA</option>
@@ -89,7 +89,7 @@ FlightFare
                         <option value="Jet Airways Business">JET AIRWAYS BUSINESS</option>
                         <option value="Vistara Premium economy">VISTARA PREMIUM ECONOMY</option>
                         <option value="Truejet">TRUEJET</option>
-                    </select></left></h3>
+                    </select></h5></left>
                 
                 </div>
 
@@ -104,19 +104,19 @@ FlightFare
         </div>
 
             <br>
-            <center><h3>{{ prediction_text }}</h3></center>
+            <center><h3><p style="color:white">{{ prediction_text }}</p></h3></center>
     
     
             <br>
             <br>
     
         </div>
-    
+        
         <style>
             body {
                 padding: 0px;
                 font-family: Arial black, Charcoal, sans-serif;
-                background: url("https://www.popsci.com/app/uploads/2019/12/19/OPJG3PMR2NG27OGO3354GN54UU.jpg?width=1440") no-repeat center fixed; 
+                background: url("https://imagesvc.meredithcorp.io/v3/jumpstartpure/image?url=https://timeincsecure-a.akamaihd.net/rtmp_uds/3281700261001/201803/3725/3281700261001_5758388631001_5758388657001-vs.jpg?pubId=3281700261001&videoId=5758388657001&w=1280&h=720&q=90&c=cc") no-repeat center fixed; 
                 background-size: cover;
             }
     
@@ -193,5 +193,6 @@ FlightFare
 
         {% block custom_js %}
         <!-- Custom JS -->
+        
         <script src="{{ url_for('static', filename='script/index.js') }}"></script>
         {% endblock custom_js %}
