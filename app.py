@@ -32,11 +32,11 @@ def api_response(request):
 
 
 @app.route('/', methods=["GET","POST"])
-@cross_origin()
 def launch():
     if request.method == 'POST':
-        try:
+        #try:
             if request.form:
+                #data1=dict(request.form).values()
                 # Departure Date
                 departure_date = request.form["Dep_Time"]
                 Start_Day = int(pd.to_datetime(departure_date, format = "%Y-%m-%dT%H:%M").day)
@@ -284,50 +284,84 @@ def launch():
                     destination_Delhi = 0
                     destination_Hyderabad = 0
                     destination_Kolkata = 0
-                    
-                model = find_model()   
-                prediction = model.predict([[
-                        Air_India,
-                        GoAir,
-                        IndiGo,
-                        Jet_Airways,
-                        Jet_Airways_Business,
-                        Multiple_carriers,
-                        Multiple_carriers_Premium_economy,
-                        SpiceJet,
-                        Trujet,
-                        Vistara,
-                        Vistara_Premium_economy,
-                        source_Chennai,
-                        source_Delhi,
-                        source_Kolkata,
-                        source_Mumbai,
-                        destination_Cochin,
-                        destination_Delhi,
-                        destination_Hyderabad,
-                        destination_Kolkata,  
-                        Total_Stops,
-                        Start_Day,
-                        Start_Month,
-                        departure_hour,
-                        departure_minute,
-                        arrival_hour,
-                        arrival_minute,
-                        Duration_hours,
-                        Duration_minutes
+                data2 = pd.DataFrame(data={
+                        "Air India",
+                       "GoAir",
+                        "Indigo",
+                        "Jet Airways",
+                        "Jet Airways Business",
+                        "Multiple carriers",
+                        "Multiple carriers Premium economy",
+                        "SpiceJet",
+                        "TrueJet",
+                        "Vistara",
+                        "Vistara Premium economy",
+                        "Source_Chennai",
+                        "Source_Delhi",
+                        "Source_Kolkata",
+                        "Source_Mumbai",
+                        "Destination_Cochin",
+                        "Destination_Delhi",
+                        "Destination_Hyderabad",
+                        "Destination_Kolkata",  
+                        "Total_Stops",
+                        "Day_of_Journey",
+                        "Month_of_Journey",
+                        "Dep_Hour",
+                        "Dep_Minute",
+                        "Arrival_Hour",
+                        "Arrival_Minute",
+                        "Duration_hours",
+                        "Duration_minute"}
                                                      
-                ]])
-                response = np.round(prediction[0], 2)
-                return render_template('index.html', response = "Fare for this trip is Rs. {}".format(response))
+                )
+             
+                 
+                dict1 = pd.DataFrame([{
+                        "Air India":Air_India,
+                       "GoAir": GoAir,
+                        "Indigo":IndiGo,
+                        "Jet Airways":Jet_Airways,
+                        "Jet Airways Business":Jet_Airways_Business,
+                        "Multiple carriers":Multiple_carriers,
+                        "Multiple carriers Premium economy":Multiple_carriers_Premium_economy,
+                        "SpiceJet":SpiceJet,
+                        "TrueJet":Trujet,
+                        "Vistara":Vistara,
+                        "Vistara Premium economy":Vistara_Premium_economy,
+                        "Source_Chennai":source_Chennai,
+                        "Source_Delhi":source_Delhi,
+                        "Source_Kolkata":source_Kolkata,
+                        "Source_Mumbai":source_Mumbai,
+                        "Destination_Cochin":destination_Cochin,
+                        "Destination_Delhi":destination_Delhi,
+                        "Destination_Hyderabad":destination_Hyderabad,
+                        "Destination_Kolkata":destination_Kolkata,  
+                        "Total_Stops":Total_Stops,
+                        "Day_of_Journey":Start_Day,
+                        "Month_of_Journey":Start_Month,
+                        "Dep_Hour":departure_hour,
+                        "Dep_Minute":departure_minute,
+                        "Arrival_Hour":arrival_hour,
+                        "Arrival_Minute":arrival_minute,
+                        "Duration_hours":Duration_hours,
+                        "Duration_minute":Duration_minutes
+                                                     
+                }])
+            
+                data = dict1
+                print(data)
+                response = predict(data)
+                return render_template("index.html")
             
             # elif request.json:
             #     response = api_response(request)
             #     return jsonify(response)
 
-        except Exception as e:
-            print(e)
-            error={"error":"Found Error in entries.Try Again!!!"}
-            return render_template("404.html",error=error)
+    #     except Exception as e:
+    #         print(e)
+    #         error={"error":"Found Error in entries.Try Again!!!"}
+    #         return render_template("404.html",error=error)
 
         
     else:

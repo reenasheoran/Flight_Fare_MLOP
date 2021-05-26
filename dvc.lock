@@ -65,8 +65,8 @@ stages:
       md5: a62f8ca7b4c71205f633fb1bb0f60d77
       size: 573759
     - path: src/model_train_evaluate.py
-      md5: 78fd94eb2c052be6fbceb90de4c67d0a
-      size: 2713
+      md5: afe3f235f96ca17e5cd540b95c5815cb
+      size: 2708
     params:
       params.yaml:
         estimators.CatBoost.params.depth: 8
@@ -80,5 +80,5 @@ stages:
       md5: f9785253119d3528b0372005e1bb9137
       size: 97
     - path: saved_models/model.joblib
-      md5: 03e42ac12b7b0775cc038e8ee15fef7b
+      md5: 832fbf078ed7c3a3dc694ceab5051f41
       size: 4144647

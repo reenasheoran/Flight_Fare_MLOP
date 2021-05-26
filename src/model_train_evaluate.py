@@ -25,7 +25,6 @@ def train_model(config_path):
     test_data_path = config["split_data"]["test_data"]
     train = pd.read_csv(train_data_path, sep=",")
     test = pd.read_csv(test_data_path, sep=",")
-   
     target = config["base"]["target"]   
  
     X_train = train.drop(target, axis=1)
