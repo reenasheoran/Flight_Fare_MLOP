@@ -25,7 +25,7 @@ def predict(data):
     model = joblib.load(model_dir_path)
     prediction = model.predict(data)
     print(prediction)
-    return prediction
+    return prediction[0]
 
 def api_response(request):
     pass
@@ -36,7 +36,6 @@ def launch():
     if request.method == 'POST':
         #try:
             if request.form:
-                #data1=dict(request.form).values()
                 # Departure Date
                 departure_date = request.form["Dep_Time"]
                 Start_Day = int(pd.to_datetime(departure_date, format = "%Y-%m-%dT%H:%M").day)
@@ -284,49 +283,17 @@ def launch():
                     destination_Delhi = 0
                     destination_Hyderabad = 0
                     destination_Kolkata = 0
-                data2 = pd.DataFrame(data={
-                        "Air India",
-                       "GoAir",
-                        "Indigo",
-                        "Jet Airways",
-                        "Jet Airways Business",
-                        "Multiple carriers",
-                        "Multiple carriers Premium economy",
-                        "SpiceJet",
-                        "TrueJet",
-                        "Vistara",
-                        "Vistara Premium economy",
-                        "Source_Chennai",
-                        "Source_Delhi",
-                        "Source_Kolkata",
-                        "Source_Mumbai",
-                        "Destination_Cochin",
-                        "Destination_Delhi",
-                        "Destination_Hyderabad",
-                        "Destination_Kolkata",  
-                        "Total_Stops",
-                        "Day_of_Journey",
-                        "Month_of_Journey",
-                        "Dep_Hour",
-                        "Dep_Minute",
-                        "Arrival_Hour",
-                        "Arrival_Minute",
-                        "Duration_hours",
-                        "Duration_minute"}
-                                                     
-                )
-             
                  
-                dict1 = pd.DataFrame([{
+                data = pd.DataFrame([{"Unnamed: 0" :0,
                         "Air India":Air_India,
                        "GoAir": GoAir,
-                        "Indigo":IndiGo,
+                        "IndiGo":IndiGo,
                         "Jet Airways":Jet_Airways,
                         "Jet Airways Business":Jet_Airways_Business,
                         "Multiple carriers":Multiple_carriers,
                         "Multiple carriers Premium economy":Multiple_carriers_Premium_economy,
                         "SpiceJet":SpiceJet,
-                        "TrueJet":Trujet,
+                        "Trujet":Trujet,
                         "Vistara":Vistara,
                         "Vistara Premium economy":Vistara_Premium_economy,
                         "Source_Chennai":source_Chennai,
@@ -345,14 +312,12 @@ def launch():
                         "Arrival_Hour":arrival_hour,
                         "Arrival_Minute":arrival_minute,
                         "Duration_hours":Duration_hours,
-                        "Duration_minute":Duration_minutes
+                        "Duration_minutes":Duration_minutes
                                                      
                 }])
             
-                data = dict1
-                print(data)
-                response = predict(data)
-                return render_template("index.html")
+                response = np.round(predict(data),2)
+                return render_template("index.html" , prediction_text="The flight fare will be :{}". format(response))
             
             # elif request.json:
             #     response = api_response(request)
