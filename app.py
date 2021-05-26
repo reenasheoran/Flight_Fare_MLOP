@@ -28,13 +28,21 @@ def predict(data):
     return prediction[0]
 
 def api_response(request):
-    pass
+    try: 
+        data=np.array([list(request.json.values())])
+        response = predict(data)
+        response = {"response":response}
+        return response
+    except Exception as e:
+            print(e)
+            error={"error":"Found Error in entries.Try Again!!!"}
+            return render_template("404.html",error=error)
 
 
 @app.route('/', methods=["GET","POST"])
 def launch():
     if request.method == 'POST':
-        #try:
+        try:
             if request.form:
                 # Departure Date
                 departure_date = request.form["Dep_Time"]
@@ -319,14 +327,14 @@ def launch():
                 response = np.round(predict(data),2)
                 return render_template("index.html", prediction_text="The flight fare will be : {}". format(response))
             
-            # elif request.json:
-            #     response = api_response(request)
-            #     return jsonify(response)
+            elif request.json:
+                response = api_response(request)
+                return jsonify(response)
 
-    #     except Exception as e:
-    #         print(e)
-    #         error={"error":"Found Error in entries.Try Again!!!"}
-    #         return render_template("404.html",error=error)
+        except Exception as e:
+            print(e)
+            error={"error":"Found Error in entries.Try Again!!!"}
+            return render_template("404.html",error=error)
 
         
     else:

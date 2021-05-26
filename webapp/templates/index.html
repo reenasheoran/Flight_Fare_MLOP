@@ -35,75 +35,137 @@ FlightFare
     <!-- nav bar ends -->
     <br>
     <br>
-    <br>
-    <br>
     <div class="container-fluid masthead">
         
         <br>
-        <div class="container">
+      <center> <div class="container">
             <div class="row">
                 <div class="col">
                     <form method="POST">
                         <!-- Input block-->
                         <div class="form-group">
                             <label for="translation">
-                                <div style="color:white">
-                                    <h1><center><i>FLIGHT FARE PREDICTION</i></center></h1><br>
-
-    
-                 <left><h5 style="font-family:Arial;"><b>DEPARTURE DATE AND TIME :</b>&nbsp;&nbsp; <input type="datetime-local" name="Dep_Time" id="Dep_Time" required="required">
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>STARTING CITY :</b> &nbsp;&nbsp;<select name = "source" id="source" required="required">
-                        <option value="">--select--</option>
-                        <option value="Delhi">Delhi</option>
-                        <option value="Kolkata">Kolkata</option>
-                        <option value="Mumbai">Mumbai</option>
-                        <option value="Chennai">Chennai</option>
-                    </select><br><br><br>
-                    <b>ARRIVAL DATE AND TIME :</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="datetime-local" name = "Arrival_Time" id = "Arival_Time" required="required">
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <b>DESTINATION CITY :</b>&nbsp;&nbsp; <select name = "destination" id="destination" required="required">
-                        <option value="">--select--</option>
-                        <option value="Cochin">Cochin</option>
-                        <option value="Delhi">Delhi</option>
-                        <option value="Hyderabad">Hyderabad</option>
-                        <option value="Kolkata">Kolkata</option>
-                    </select><br><br><br>
-                    <b>NUMBER OF HALTING STOPS :</b>&nbsp;&nbsp;  <select name = "stops" id="stops" required="required">
-                        <option value="">--select--</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="0">No Stop</option>
-                    </select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <b>CHOICE OF AIRLINE :</b>&nbsp;&nbsp; <select name = "airline" id="airline" required="required">
-                        <option value="">--select--</option>
-                        <option value="Jet Airways">JET AIRWAYS</option>
-                        <option value="Air India">AIR INDIA</option>
-                        <option value="Multiple Carriers">MULTIPLE CARRIERS</option>
-                        <option value="SpiceJet">SPICEJET</option>
-                        <option value="Vistara">VISTARA</option>
-                        <option value="GoAir">GO AIR</option>
-                        <option value="Multiple carriers Premium economy">MULTIPLE CARRIERS PREMIUM ECONOMY</option>
-                        <option value="Jet Airways Business">JET AIRWAYS BUSINESS</option>
-                        <option value="Vistara Premium economy">VISTARA PREMIUM ECONOMY</option>
-                        <option value="Truejet">TRUEJET</option>
-                    </select></h5></left>
-                
+                                <div style="color:black">
+                                    <h2><center><i>FLIGHT FARE PREDICTION</i></center></h2>
+                                   <center><div class="row">
+                                        <div class="col-sm-6">
+                                            <div class="card">
+                                                <div class="card-body">
+                                                    <h5 class="card-title">Departure Date and Time</h5>
+                                                    <!-- Departure -->
+                                                    <input type="datetime-local" name="Dep_Time" id="Dep_Time" required="required">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <br>
+                                        
+                                        <div class="col-sm-6">
+                                            <div class="card">
+                                                <div class="card-body">
+                                                    <h5 class="card-title">Arrival Date and Time</h5>
+                                                    <!-- Arrival -->
+                                                    <input type="datetime-local" name="Arrival_Time" id="Arrival_Time" required="required">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                        
+                                    <br>
+                                   
+                        
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div class="card">
+                                                <div class="card-body">
+                                                    <!-- Source -->
+                                                    <h5 class="card-title">Starting City</h5>
+                                                    <select name="source" id="source" required="required">
+                                                        <option value="">--Select--</option>
+                                                        <option value="Delhi">Delhi</option>
+                                                        <option value="Kolkata">Kolkata</option>
+                                                        <option value="Mumbai">Mumbai</option>
+                                                        <option value="Chennai">Chennai</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="card">
+                                                <div class="card-body">
+                                                    <h5 class="card-title">Destination City</h5>
+                                                    <!-- Destination -->
+                                                    <select name="destination" id="destination" required="required">
+                                                        <option value="">--Select--</option>
+                                                        <option value="Cochin">Cochin</option>
+                                                        <option value="Delhi">Delhi</option>
+                                                        <option value="Hyderabad">Hyderabad</option>
+                                                        <option value="Kolkata">Kolkata</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                        
+                        
+                        
+                                    <br>
+                                    
+                        
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div class="card">
+                                                <div class="card-body">
+                                                    <h5 class="card-title">Number of Stops</h5>
+                                                    <!-- Total Stops -->
+                                                    <select name="stops" required="required">
+                                                        <option value="">--Select--</option>
+                                                        <option value="0">Non-Stop</option>
+                                                        <option value="1">1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="card">
+                                                <div class="card-body">
+                                                    <h5 class="card-title">Airline</h5>
+                                                    <!-- Airline -->
+                                                    <select name="airline" id="airline" required="required">
+                                                        <option value="">--Select--</option>
+                                                        <option value="Jet Airways">Jet Airways</option>
+                                                        <option value="IndiGo">IndiGo</option>
+                                                        <option value="Air India">Air India</option>
+                                                        <option value="Multiple carriers">Multiple carriers</option>
+                                                        <option value="SpiceJet">SpiceJet</option>
+                                                        <option value="Vistara">Vistara</option>
+                                                        <option value="Air Asia">Air Asia</option>
+                                                        <option value="GoAir">GoAir</option>
+                                                        <option value="Multiple carriers Premium economy">Multiple carriers Premium economy </option>                                                       
+                                                        <option value="Jet Airways Business">Jet Airways Business</option>
+                                                        <option value="Vistara Premium economy">Vistara Premium economy</option>
+                                                        <option value="Trujet">Trujet</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                            
                 </div>
-
-                <!-- Select output language here. -->
+               
+     </div></center>
+                
                 <div class="form-group">
-                </div>
+                
 
-                    <left><br><br><button id="sub" type="submit ">Calculate Fare</button></left>
+                    <left><button id="sub" type="submit ">Calculate Fare</button></left>
                 
     
-            </form>
-        </div>
+</form>
+</div></center>
 
-            <br>
+           
             <center><h3><p style="color:white">{{ prediction_text }}</p></h3></center>
     
     
@@ -116,7 +178,7 @@ FlightFare
             body {
                 padding: 0px;
                 font-family: Arial black, Charcoal, sans-serif;
-                background: url("https://imagesvc.meredithcorp.io/v3/jumpstartpure/image?url=https://timeincsecure-a.akamaihd.net/rtmp_uds/3281700261001/201803/3725/3281700261001_5758388631001_5758388657001-vs.jpg?pubId=3281700261001&videoId=5758388657001&w=1280&h=720&q=90&c=cc") no-repeat center fixed; 
+                background: url("https://ei.marketwatch.com/Multimedia/2019/02/25/Photos/ZQ/MW-HE536_airpla_20190225131547_ZQ.jpg?uuid=5fa81d1a-3929-11e9-9462-ac162d7bc1f7") no-repeat center fixed; 
                 background-size: cover;
             }
     
@@ -188,6 +250,8 @@ FlightFare
             }
     
         </style>
+       
+                
     
         {% endblock body %}
 
