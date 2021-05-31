@@ -262,7 +262,7 @@ def launch():
                     
                 # Destination
                 Destination = request.form["destination"]
-                if (Source == 'Cochin'):
+                if (Destination == 'Cochin'):
                     destination_Cochin = 1
                     destination_Delhi = 0
                     destination_Hyderabad = 0
