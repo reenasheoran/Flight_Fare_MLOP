@@ -325,7 +325,7 @@ def launch():
                 }])
             
                 response = np.round(predict(data),2)
-                return render_template("index.html", prediction_text="The flight fare will be : {}". format(response))
+                return render_template("index.html", prediction_text="The flight fare will be : INR {}". format(response))
             
             elif request.json:
                 response = api_response(request)
