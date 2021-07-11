@@ -1,9 +1,5 @@
 # FLIGHT-FARE-PREDICTOR 
 It is a machine learning project to predict the price for domestic flights in India.
-## Demo
-![Home Page](https://github.com/reenasheoran/Flight_Fare_MLOP/blob/main/static/1.png)
-![Fill Entries](https://github.com/reenasheoran/Flight_Fare_MLOP/blob/main/static/2.png)
-![Prediction](https://github.com/reenasheoran/Flight_Fare_MLOP/blob/main/static/3.png)
 ## Motivation
 There is a general idea that the earlier we book the flight, the lower be the ticket prices. But the question is, whenever anyone plans to book the flight, how one could know which flight would be cheaper.  Moreover, the price of a flight ticket is highly dependent upon demand and changes accordingly. In this project, I am trying to solve this issue with the help of data science.
 ## Problem Statement
@@ -42,7 +38,7 @@ I looked at the distributions of the data and the prices of various airlines bas
 ![EDA3](https://github.com/reenasheoran/Flight_Fare_MLOP/blob/main/static/6.png)
 ## Model Building
 For building the model, I first splitted the data into train and test set in 80:20 ratio respectively. Then I tried following models: -<br>
-1. Linear Regression <br>
+1. Linear Regression  <br>
 2. Ridge Regression <br>
 3. Lasso Regression<br>
 4. ExtraTrees Regressor <br>
@@ -51,11 +47,24 @@ For building the model, I first splitted the data into train and test set in 80:
 7. XGBoost Regressor <br>
 8. Lightgbm Regressor
 ## Models Evaluation and Performance Metrics
-For evaluating the model I recorded Training R2 score, Prediction R2 Score, Mean Absolute Error(MAE), Root Mean Squared Error(RMSE). For making the final decision I considered two metrics, Prediction R2 Score and Mean Absolute Error as these two metrics shows how good the model is on unknown data. Following is the performance table: - 
-|Model|R2 Score(Training)|R2 Score(Prediction)|MAE|RMSE|
-
+For evaluating the model I recorded Prediction R2 Score, Mean Absolute Error(MAE), Root Mean Squared Error(RMSE). For making the final decision I considered two metrics, Prediction R2 Score and Mean Absolute Error as these two metrics shows how good the model is on unknown data. Following is the performance table: - <br>
+Model|R2 Score(Prediction)|MAE|RMSE
+---|---|---|---
+Linear Regression|0.6|1995.507|2936.755
+Ridge Regression|0.599|2001.359|2942.245
+Lasso Regression|0.599|1997.585|2939.402
+ExtraTrees Regressor|0.806|1225.559|2047.61
+RandomForest Regressor|0.794|1182.154|2109.848
+LightGBM Regressor|0.823|1247.141|1955.4
+XGBoost Regressor|0.844|1140.601|1834.37
+CatBoost Regressor|0.865|1116.122|1704.965
 
 ## Installation
 This project is developed using python 3.7. If you are using any lower version of python then I recommend you to upgrade your python to the latest version by using pip command. Once you clone this repository just type this command in the cloned project directory in order to install all the required packages:
 ## Deployment
+The model is deployed on heroku platform.
+## Screen Shots
+![Home Page](https://github.com/reenasheoran/Flight_Fare_MLOP/blob/main/static/1.png)
+![Fill Entries](https://github.com/reenasheoran/Flight_Fare_MLOP/blob/main/static/2.png)
+![Prediction](https://github.com/reenasheoran/Flight_Fare_MLOP/blob/main/static/3.png)
 
