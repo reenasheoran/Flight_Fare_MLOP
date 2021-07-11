@@ -27,6 +27,11 @@ Total_Stops: Total stops between the source and destination.<br>
 Additional_Info: Additional information about the flight.<br>
 Price: The price of the ticket.<br>
 
+## EDA
+![image](https://user-images.githubusercontent.com/73627453/125208549-6b46df80-e250-11eb-8099-9a89ff758480.png)
+![image](https://user-images.githubusercontent.com/73627453/125208512-1d31dc00-e250-11eb-9580-0c3f0ce1331e.png)
+
+
 ## Performance Metrics
 ## Installation
 This project is developed using python 3.7. If you are using any lower version of python then I recommend you to upgrade your python to the latest version by using pip command. Once you clone this repository just type this command in the cloned project directory in order to install all the required packages:
