@@ -11,7 +11,7 @@ The objective of this project is to create a web app that could help the users t
 ## Data Collection
 The dataset has been taken from kaggle https://www.kaggle.com/nikhilmittal/flight-fare-prediction-mh?select=Data_Train.xlsx. It contains the data about prices of flight tickets for various airlines and between various cities for the period between the months of March and June of 2019. Here is the details about data:-
 
-Size of training set: 10683 records
+Size of training set: 10683 records<br>
 Size of test set: 2671 records
 
 **FEATURES**: 
