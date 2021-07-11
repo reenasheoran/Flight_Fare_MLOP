@@ -27,9 +27,21 @@ Total_Stops: Total stops between the source and destination.<br>
 Additional_Info: Additional information about the flight.<br>
 Price: The price of the ticket.<br>
 
+## Feature Engineering
+Then, I did feature engineering as follows: - <br>
+-Converted column 'Date_of_Journey' from categorical to datetime dtype. Since all data is from same year, I am just extracted day and month from "Date_of_journey"<br>
+-Extracted hours and minutes form "Dep_Time" <br>
+-Extracted hour and minute from "Arrival_Time" <br>
+-Extracted hour and minute from "Duration"<br>
+-Applied one-hot encoding on categorical data such as total_stops, airline, source and destination features.<br>
+
 ## EDA
+I looked at the distributions of the data and the prices of various airlines based on stoppages, source, destination, etc. Below are few highlights from EDA section.
 ![EDA1](https://github.com/reenasheoran/Flight_Fare_MLOP/blob/main/static/4.png)
 ![EDA2](https://github.com/reenasheoran/Flight_Fare_MLOP/blob/main/static/5.png)
+![EDA3](https://github.com/reenasheoran/Flight_Fare_MLOP/blob/main/static/6.png)
+
+## Model Building
 ## Performance Metrics
 ## Installation
 This project is developed using python 3.7. If you are using any lower version of python then I recommend you to upgrade your python to the latest version by using pip command. Once you clone this repository just type this command in the cloned project directory in order to install all the required packages:
