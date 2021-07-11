@@ -34,3 +34,4 @@ Price: The price of the ticket.<br>
 ## Installation
 This project is developed using python 3.7. If you are using any lower version of python then I recommend you to upgrade your python to the latest version by using pip command. Once you clone this repository just type this command in the cloned project directory in order to install all the required packages:
 ## Deployment
+
