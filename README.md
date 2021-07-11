@@ -1,5 +1,7 @@
 # FLIGHT-FARE-PREDICTOR 
 It is a machine learning project to predict the price for domestic flights in India.
+## Demo
+https://github.com/reenasheoran/Flight_Fare_MLOP/blob/main/images/1.png
 ## Problem Statement
 The objective is to get an estimate of the price of flight tickets in India given the details about the flights like source,destination, departure/arrival datae and time,etc.
 ## Data Collection
