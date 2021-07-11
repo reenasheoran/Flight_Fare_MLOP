@@ -14,18 +14,18 @@ The dataset has been taken from kaggle https://www.kaggle.com/nikhilmittal/fligh
 Size of training set: 10683 records<br>
 Size of test set: 2671 records
 
-**FEATURES**: 
-Airline: The name of the airline.
-Date_of_Journey: The date of the journey
-Source: The source from which the service begins.
-Destination: The destination where the service ends.
-Route: The route taken by the flight to reach the destination.
-Dep_Time: The time when the journey starts from the source.
-Arrival_Time: Time of arrival at the destination.
-Duration: Total duration of the flight.
-Total_Stops: Total stops between the source and destination.
-Additional_Info: Additional information about the flight
-Price: The price of the ticket
+**FEATURES**: <br>
+Airline: The name of the airline.<br>
+Date_of_Journey: The date of the journey.<br>
+Source: The source from which the service begins.<br>
+Destination: The destination where the service ends.<br>
+Route: The route taken by the flight to reach the destination.<br>
+Dep_Time: The time when the journey starts from the source.<br>
+Arrival_Time: Time of arrival at the destination.<br>
+Duration: Total duration of the flight.<br>
+Total_Stops: Total stops between the source and destination.<br>
+Additional_Info: Additional information about the flight.<br>
+Price: The price of the ticket.<br>
 
 ## Performance Metrics
 ## Installation
