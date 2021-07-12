@@ -68,6 +68,7 @@ RandomForest Regressor|0.794|1182.154|2109.848
 LightGBM Regressor|0.823|1247.141|1955.4
 XGBoost Regressor|0.844|1140.601|1834.37
 CatBoost Regressor|0.865|1116.122|1704.965
+
 Since CatBoost Regressor has the highest R2 score with minimum MAE score. This model is finalized for production.
 ## Productionization and Deployment
 In this step, I built a flask based web app that is hosted on heroku platform https://flight-fare-predictor-mlop.herokuapp.com/ . The API endpoint takes in a request with a list of values entered by the app user and returns the predicted price of the flight ticket.
