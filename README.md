@@ -1,16 +1,15 @@
 # FLIGHT-FARE-PREDICTOR 
 A machine learning project to predict the price for domestic flights in India.
 ## Project Overview
-It is a Flask based Web Application, hosted on the heroku platform, that Predicts the Flight Price using CatBoost Regressor (MAE ~ INR 1116.12).
+It is a Flask based Web Application, hosted on the heroku platform with CI-CD pipeline workflow, that Predicts the Flight Price using CatBoost Regressor (MAE ~ INR 1116.12).
 ## Installation
 This project is developed using python 3.7. If you are using any lower version of python then I recommend you to upgrade your python to the latest version by using pip command. Follow the steps below to run this project locally.
 ```
-git clone
+git clone https://github.com/reenasheoran/Flight_Fare_MLOP.git
 cd Flight_Fare_MLOP
 pip install -r requirements.txt
 python app.py
 ```
-
 ## Motivation
 Figuring out when to book the cheapest flight is never easy. From the best day to book flight to other cheapest flights, travel hacks. Therefore, I planned to develop a flight price prediction app to help users find the ultimate cheap flights.
 ## Problem Statement
@@ -34,7 +33,7 @@ Total_Stops: Total stops between the source and destination.<br>
 Additional_Info: Additional information about the flight.<br>
 Price: The price of the ticket.<br>
 ## Data Cleaning
-Fortunately, there were only 2 missing values that too in the same row. Therefor, I dropped the rows with NA values. 
+Fortunately, there were only 2 missing values that too in the same row. Therefore, I dropped the row with NA values. 
 ## Feature Engineering
 Then, I did feature engineering as follows: - <br>
 -Converted column 'Date_of_Journey' from categorical to datetime dtype. Since all data is from same year, I am just extracted day and month from "Date_of_journey"<br>
@@ -69,11 +68,9 @@ RandomForest Regressor|0.794|1182.154|2109.848
 LightGBM Regressor|0.823|1247.141|1955.4
 XGBoost Regressor|0.844|1140.601|1834.37
 CatBoost Regressor|0.865|1116.122|1704.965
-
-## Installation
-
-## Deployment
-The model is deployed on heroku platform.
+Since CatBoost Regressor has the highest R2 score with minimum MAE score. This model is finalized for production.
+## Productionization and Deployment
+In this step, I built a flask based web app that is hosted on heroku platform. The API endpoint takes in a request with a list of values entered by the app user and returns the predicted price of the flight ticket.
 ## Screen Shots
 ![Home Page](https://github.com/reenasheoran/Flight_Fare_MLOP/blob/main/static/1.png)
 ![Fill Entries](https://github.com/reenasheoran/Flight_Fare_MLOP/blob/main/static/2.png)
