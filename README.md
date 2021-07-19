@@ -6,7 +6,7 @@ It is a Flask based Web Application, hosted on the heroku platform with CI-CD pi
 This project is developed using python 3.7. If you are using any lower version of python then I recommend you to upgrade your python to the latest version by using pip command. Follow the steps below to run this project locally.
 ```
 git clone https://github.com/reenasheoran/Flight_Fare_MLOP.git
-cd Flight_Fare_MLOP
+cd Flight_Fare_MLOP-main
 pip install -r requirements.txt
 python app.py
 ```
